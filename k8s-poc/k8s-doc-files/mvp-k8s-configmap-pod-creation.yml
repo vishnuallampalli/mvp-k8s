@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mvp-k8s-configmap-pod
+  namespace: mvp-k8s-namespace-dev
+spec:
+  containers:
+  - name: mvp-k8s-app1-container
+    image: mvp-k8s-app1-image:latest
+    envFrom:
+      - configMapRef:
+          name: mvp-k8s-configmap
+  labels:
+    app: mvp-k8s-app1

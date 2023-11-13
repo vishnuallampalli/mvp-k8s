@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mvp-k8s-service
+  namespace: mvp-k8s-namespace-dev
+  labels:
+    app: mvp-k8s-app1
+spec:
+  selector:
+    app: mvp-k8s-app1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP

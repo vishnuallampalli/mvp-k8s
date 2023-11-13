@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mvp-k8s-nfs-pvc
+  namespace: mvp-k8s-namespace-dev
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      app: mvp-k8s-app1
+  storageClassName: nfs

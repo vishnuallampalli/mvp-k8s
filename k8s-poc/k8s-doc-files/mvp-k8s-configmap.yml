@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mvp-k8s-configmap
+  namespace: mvp-k8s-namespace-dev
+  labels:
+    app: mvp-k8s-app1
+data:
+  config.properties: |
+    key1: value1
+    key2: value2
